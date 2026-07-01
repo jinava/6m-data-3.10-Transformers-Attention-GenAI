@@ -77,3 +77,19 @@ This is the last lesson. After L10 you'll have built — across nine weeks — a
 You can ship real ML systems. The next steps depend on you — domain specialisation, fine-tuning, MLOps, evaluation. The foundations are all here.
 
 Welcome to the last week.
+
+---
+
+**<span style="color:green">[Opus 4.8]</span> Reviewer notes — repo wiring (verify before publishing):**
+
+Three things a learner will hit that aren't code bugs but hurt the experience:
+
+1. **The "Open in Colab" badges point to the wrong repo.** All four badged notebooks (`03`, `04`, `assignment`, `optional_extensions`) link to
+   `colab.research.google.com/github/flexfengfeng/dsai-m3-ml-genai/blob/main/L10-transformers-genai/notebooks/<file>`
+   — a repo **and** path that don't exist here. Inside those same notebooks the Colab setup cell clones `su-ntu-ctp/6m-data-3.10-Transformers-Attention-GenAI`, and the walkthrough link above is `su-ntu-ctp.github.io/6m-data-3.10-...`. So clicking a badge lands on a 404 / the wrong notebook. The badge target should match wherever this repo is actually published — after the fork-sync, that's `.../github/<owner>/6m-data-3.10-Transformers-Attention-GenAI/blob/main/notebooks/<file>`. (Left for the git owner to set, since it depends on the canonical host.)
+
+2. **This line slightly overstates Colab coverage.** Phase 2 says *"Each notebook has an Open in Colab badge at the top"* — but `01_monday_morning` and `02_attention_intuition` have no badge (they don't need a GPU). `setup.md` states it correctly: *"Notebooks 03, 04, the assignment, and the extensions each have an Open in Colab badge."*
+
+3. **Two polished explainer pages are orphaned.** `attention-explainer.html` and `rag-explainer.html` (animated Q·K·V and RAG walkthroughs, added in the last merge) are not linked from anywhere — not this Files table, not the notebooks, not `docs/index.html`. Either wire them in (e.g. add rows to the Files table and link `attention-explainer.html` from NB 02 and `rag-explainer.html` from NB 04) or remove them; right now learners can't discover them.
+
+**<span style="color:green"><em>[Opus 4.8] — end of note</em></span>**
